@@ -5,6 +5,20 @@ namespace DesignPatterns.Observer
 {
     public class ScorePresenter : MonoBehaviour
     {
+        public static ScorePresenter Instance;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Instance = null;
+            }
+        }
+
         public Text scoreText;
         public Text highScoreText;
 
